@@ -1,0 +1,22 @@
+{
+  "name": "supertest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "clean:reports": "rm -rf ./mochawesome-report/*",
+    "reports": "mocha ./test/**/**.test.js ./test/**/**/**.test.js --reporter mochawesome",
+    "test:reports": "clear npm run clean:reports && npm run reports",
+    "test:dev": "mocha ./test/**/**.test.js ./test/**/**/**.test.js --timeout 10000 --exit",
+    "test:qa": "export TEST_ENV=dev && mocha --recursive --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^5.1.0",
+    "mocha": "^10.3.0",
+    "mochawesome": "^7.1.3",
+    "supertest": "^6.3.4"
+  }
+}

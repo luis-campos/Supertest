@@ -1,0 +1,239 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 7,
+    "passes": 6,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-02-27T16:44:41.886Z",
+    "end": "2024-02-27T16:44:42.500Z",
+    "duration": 614,
+    "testsRegistered": 7,
+    "passPercent": 85.71428571428571,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5fd08a0a-6eaa-4196-9e4c-2cbbaf971e9c",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "acff473a-2742-49bf-b63d-3fdcfd0742b0",
+          "title": "get Pokemons",
+          "fullFile": "/Users/luis.gustavo.campos/Documents/Supertest/test/pokemon/get.test.js",
+          "file": "/test/pokemon/get.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should return a list of pokemons",
+              "fullTitle": "get Pokemons should return a list of pokemons",
+              "timedOut": false,
+              "duration": 105,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL).get(\"/pokemon/\");\nexpect(response.status).to.be.eq(200);\nexpect(response.body.results.length).to.be.greaterThan(0);",
+              "err": {},
+              "uuid": "753a92c4-ea30-49a1-9893-760df38067c0",
+              "parentUUID": "acff473a-2742-49bf-b63d-3fdcfd0742b0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return a list of 10 pokemons",
+              "fullTitle": "get Pokemons should return a list of 10 pokemons",
+              "timedOut": false,
+              "duration": 85,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL).get(\"/pokemon?limit=10\");\nexpect(response.status).to.be.eq(200);\nexpect(response.body.results.length).to.be.eq(10);",
+              "err": {},
+              "uuid": "d1eab673-4ef1-43ef-8741-7e5aca2eb61d",
+              "parentUUID": "acff473a-2742-49bf-b63d-3fdcfd0742b0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return a specific pokemon by name",
+              "fullTitle": "get Pokemons should return a specific pokemon by name",
+              "timedOut": false,
+              "duration": 83,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL).get(\"/pokemon/pikachu\");\n\nexpect(response.status).to.be.eq(200)\nexpect(response.body.name).to.be.eq(\"pikachu\");",
+              "err": {},
+              "uuid": "4ca97c04-cb59-489f-856c-ddd153528c5d",
+              "parentUUID": "acff473a-2742-49bf-b63d-3fdcfd0742b0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return a specific pokemon by id",
+              "fullTitle": "get Pokemons should return a specific pokemon by id",
+              "timedOut": false,
+              "duration": 76,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL).get(\"/pokemon/1\");\nexpect(response.status).to.be.eq(200)\nexpect(response.body.name).to.be.eq(\"bulbasaur\");",
+              "err": {},
+              "uuid": "c85e73b1-e895-4744-94a6-39587d396f16",
+              "parentUUID": "acff473a-2742-49bf-b63d-3fdcfd0742b0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "753a92c4-ea30-49a1-9893-760df38067c0",
+            "d1eab673-4ef1-43ef-8741-7e5aca2eb61d",
+            "4ca97c04-cb59-489f-856c-ddd153528c5d",
+            "c85e73b1-e895-4744-94a6-39587d396f16"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 349,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "78dc4f20-8a0d-45a1-a89e-d791a21dbe9c",
+          "title": "get Types",
+          "fullFile": "/Users/luis.gustavo.campos/Documents/Supertest/test/type/get.test.js",
+          "file": "/test/type/get.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should return a list of pokemons type",
+              "fullTitle": "get Types should return a list of pokemons type",
+              "timedOut": false,
+              "duration": 78,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL).get(\"/type/\");\nexpect(response.status).to.be.eq(200);\nexpect(response.body.results.length).to.be.greaterThan(0);\nexpect(response.body.results).to.be.a(\"array\");",
+              "err": {},
+              "uuid": "85ff4ca6-04bd-4725-a826-d281f120c908",
+              "parentUUID": "78dc4f20-8a0d-45a1-a89e-d791a21dbe9c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return a specific type by name",
+              "fullTitle": "get Types should return a specific type by name",
+              "timedOut": false,
+              "duration": 94,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL).get(\"/type/flying\");\nexpect(response.status).to.be.eq(200);\nexpect(response.body.name).to.be.a(\"string\")\nexpect(response.body.name).to.be.eq(\"flyin\");",
+              "err": {
+                "message": "AssertionError: expected 'flying' to equal 'flyin'",
+                "estack": "AssertionError: expected 'flying' to equal 'flyin'\n    at Context.<anonymous> (file:///Users/luis.gustavo.campos/Documents/Supertest/test/type/get.test.js:20:38)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+                "diff": "- flying\n+ flyin\n"
+              },
+              "uuid": "471c8f98-c22c-46cd-a2e0-cd501d0c22db",
+              "parentUUID": "78dc4f20-8a0d-45a1-a89e-d791a21dbe9c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should return a specific type by id",
+              "fullTitle": "get Types should return a specific type by id",
+              "timedOut": false,
+              "duration": 85,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL).get(\"/type/5\");\nexpect(response.status).to.be.eq(200);\nexpect(response.body.name).to.be.a(\"string\")\nexpect(response.body.name).to.be.eq(\"ground\");",
+              "err": {},
+              "uuid": "6d04595e-a0ed-4ae8-bb7f-0aba1965c9a6",
+              "parentUUID": "78dc4f20-8a0d-45a1-a89e-d791a21dbe9c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "85ff4ca6-04bd-4725-a826-d281f120c908",
+            "6d04595e-a0ed-4ae8-bb7f-0aba1965c9a6"
+          ],
+          "failures": [
+            "471c8f98-c22c-46cd-a2e0-cd501d0c22db"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 257,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.3.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
